@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Kind of UX Designer Are You?</title>
+<meta name="description" content="A quick, slightly random survey to help you find where you naturally land in UX — people or systems, exploring or building." />
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="survey.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <span class="site-title">UX Designer Survey</span>
+    <nav class="site-nav">
+      <a href="index.html">← Back home</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- INTRO -->
+  <section id="intro" class="intro-section">
+    <div class="wrap">
+      <p class="eyebrow">A quick survey</p>
+      <h1>What kind of UX designer are you?</h1>
+      <p class="lede">Twelve quick rounds, none of them asking you to rate yourself. Answer with whatever's true on a normal day — we'll figure out whether you lean toward people or systems, and toward exploring or building.</p>
+      <p class="intro-meta mono">~4 MIN · 12 QUESTIONS</p>
+      <button class="btn-primary" id="start-btn" type="button">Start the survey →</button>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz-root" class="quiz-section" hidden>
+    <div class="wrap">
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-label mono" id="progress-label">QUESTION 1 OF 12</p>
+
+      <div id="panel-host"></div>
+
+      <div class="quiz-nav">
+        <button class="btn-text nav-btn" id="nav-back" type="button">← Back</button>
+        <button class="btn-primary nav-btn" id="nav-next" type="button">Next →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results" class="results-section" hidden>
+    <div class="wrap">
+      <p class="eyebrow">Your result</p>
+      <h2 id="result-name">The Investigator</h2>
+      <p class="result-tag mono" id="result-tag">PEOPLE + EXPLORE</p>
+      <p class="lede" id="result-desc"></p>
+
+      <div class="meters">
+        <div class="meter" id="meter-ps">
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+            <div class="meter-marker"></div>
+          </div>
+          <div class="meter-labels mono">
+            <span class="meter-left">PEOPLE</span>
+            <span class="meter-right">SYSTEMS</span>
+          </div>
+        </div>
+        <div class="meter" id="meter-eb">
+          <div class="meter-track">
+            <div class="meter-fill"></div>
+            <div class="meter-marker"></div>
+          </div>
+          <div class="meter-labels mono">
+            <span class="meter-left">EXPLORE</span>
+            <span class="meter-right">BUILD</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="paths-label mono">DESIGN PATHS WORTH A LOOK</p>
+      <div class="tag-row" id="result-paths"></div>
+
+      <div class="result-actions">
+        <button class="btn-primary" id="retake-btn" type="button">Retake the survey</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="survey.js"></script>
+</body>
+</html>
