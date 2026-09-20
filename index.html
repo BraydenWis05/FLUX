@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FLUX — The UX Universe | SCAD Majors &amp; Minors Fair</title>
+<meta name="description" content="Welcome to the UX Universe. FLUX, SCAD's UX design club, invites you to explore what UX is, see what students are making, and find where you fit." />
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<header class="topbar">
+  <a class="wordmark" href="#hero">FLUX <span>/ SCAD</span></a>
+  <nav class="orbit-nav" aria-label="Section progress">
+    <button data-target="#hero" class="orbit-dot is-active" aria-label="Hero"></button>
+    <button data-target="#what-is-ux" class="orbit-dot" aria-label="What is UX"></button>
+    <button data-target="#orbit" class="orbit-dot" aria-label="Find your orbit"></button>
+    <button data-target="#students" class="orbit-dot" aria-label="Meet SCAD UX students"></button>
+    <button data-target="#everywhere" class="orbit-dot" aria-label="UX goes everywhere"></button>
+    <button data-target="#flux" class="orbit-dot" aria-label="Meet FLUX"></button>
+    <button data-target="#cta" class="orbit-dot" aria-label="Keep exploring"></button>
+  </nav>
+  <span class="fair-tag">MAJORS &amp; MINORS FAIR</span>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="hero" class="section hero">
+    <div class="orbit-lines" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-a" cx="500" cy="500" rx="420" ry="200"/>
+        <ellipse class="ring ring-b" cx="500" cy="500" rx="300" ry="420"/>
+        <ellipse class="ring ring-c" cx="500" cy="500" rx="620" ry="340"/>
+      </svg>
+      <span class="floating-object obj-1" style="--r:22px"></span>
+      <span class="floating-object obj-2" style="--r:10px"></span>
+      <span class="floating-object obj-3" style="--r:15px"></span>
+    </div>
+
+    <div class="section-inner hero-inner">
+      <p class="eyebrow" data-reveal>SIGNAL FOUND · UX-001</p>
+      <h1 data-reveal>Welcome to the<br>UX Universe.</h1>
+      <p class="hero-sub" data-reveal>UX is bigger than you think. Explore what UX is, see what SCAD students are making, and find where you fit.</p>
+      <a href="#what-is-ux" class="btn btn-primary" data-reveal data-scroll>EXPLORE UX →</a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span></span>
+      <p>scroll</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS UX -->
+  <section id="what-is-ux" class="section what-is-ux">
+    <div class="orbit-lines" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-a" cx="140" cy="120" rx="360" ry="180"/>
+        <ellipse class="ring ring-b" cx="900" cy="820" rx="300" ry="300"/>
+      </svg>
+      <span class="floating-object obj-1" style="--r:14px"></span>
+    </div>
+    <div class="section-inner">
+      <p class="eyebrow" data-reveal>ORBIT 01</p>
+      <h2 data-reveal>So... what is UX?</h2>
+      <div class="two-col">
+        <p class="lede" data-reveal>UX is about understanding people and designing better experiences for them. It can be an app, a website, a physical product, a healthcare experience, a car, a service — or something that doesn't exist yet.</p>
+        <p class="lede" data-reveal>UX brings together research, technology, design, and problem-solving to figure out what people need, and create experiences that actually work for them.</p>
+      </div>
+      <p class="statement" data-reveal>UX is more than<br>designing screens.</p>
+    </div>
+  </section>
+
+  <!-- FIND YOUR ORBIT -->
+  <section id="orbit" class="section find-orbit">
+    <div class="orbit-lines" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-c" cx="820" cy="140" rx="340" ry="200"/>
+      </svg>
+    </div>
+    <div class="section-inner">
+      <p class="eyebrow" data-reveal>ORBIT 02 · EXPLORE</p>
+      <h2 data-reveal>Where could UX take you?</h2>
+      <p class="lede lede-narrow" data-reveal>You don't have to know your path yet. These are just a few of the orbits inside UX — most designers move between several of them.</p>
+
+      <div class="orbit-field">
+        <div class="orbit-center">UX</div>
+        <div class="orbit-grid">
+          <button class="planet" data-index="01">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 01</span>
+              <span class="planet-name">UX Research</span>
+            </span>
+            <span class="planet-desc">Understand people, behaviors, needs, and problems.</span>
+          </button>
+          <button class="planet" data-index="02">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 02</span>
+              <span class="planet-name">Interaction Design</span>
+            </span>
+            <span class="planet-desc">Design how people interact with products and experiences.</span>
+          </button>
+          <button class="planet" data-index="03">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 03</span>
+              <span class="planet-name">UI Design</span>
+            </span>
+            <span class="planet-desc">Design digital interfaces and visual systems.</span>
+          </button>
+          <button class="planet" data-index="04">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 04</span>
+              <span class="planet-name">Product Design</span>
+            </span>
+            <span class="planet-desc">Bring research, interaction, visual design, and strategy together.</span>
+          </button>
+          <button class="planet" data-index="05">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 05</span>
+              <span class="planet-name">Service Design</span>
+            </span>
+            <span class="planet-desc">Look at the entire experience, not just one screen.</span>
+          </button>
+          <button class="planet" data-index="06">
+            <span class="planet-ring"></span>
+            <span class="planet-label">
+              <span class="planet-tag">ORBIT · 06</span>
+              <span class="planet-name">UX Strategy</span>
+            </span>
+            <span class="planet-desc">Figure out what should be designed, and why.</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET SCAD UX STUDENTS -->
+  <section id="students" class="section students">
+    <div class="section-inner">
+      <p class="eyebrow" data-reveal>ORBIT 03 · CONSTELLATION</p>
+      <h2 data-reveal>See what we're making.</h2>
+      <p class="lede lede-narrow" data-reveal>UX isn't just something you learn. It's something you make. A few current SCAD UX students, and what they're working on.</p>
+    </div>
+
+    <div class="constellation" id="constellation">
+      <svg class="constellation-lines" aria-hidden="true"></svg>
+      <!-- Student cards injected / styled below -->
+      <article class="star-card" data-star>
+        <div class="star-card-visual" data-pattern="1" aria-hidden="true"></div>
+        <div class="star-card-body">
+          <p class="star-name">BRAYDEN W.</p>
+          <p class="star-meta">UX Design · 3rd Year</p>
+          <p class="star-interest">Product + Interaction</p>
+          <p class="star-project">ORBIT LINE</p>
+          <p class="star-desc">A wayfinding app that turns SCAD's campus into a constellation students can navigate by feel, not just by map.</p>
+          <a href="https://scadflux.com/" class="star-link" target="_blank" rel="noopener">VIEW PORTFOLIO →</a>
+        </div>
+      </article>
+
+      <article class="star-card" data-star>
+        <div class="star-card-visual" data-pattern="2" aria-hidden="true"></div>
+        <div class="star-card-body">
+          <p class="star-name">MAYA C.</p>
+          <p class="star-meta">UX Design · 4th Year</p>
+          <p class="star-interest">Research + Strategy</p>
+          <p class="star-project">SECOND OPINION</p>
+          <p class="star-desc">A research-backed service concept helping first-gen students find mentors before they realize they need one.</p>
+          <a href="https://scadflux.com/" class="star-link" target="_blank" rel="noopener">VIEW PORTFOLIO →</a>
+        </div>
+      </article>
+
+      <article class="star-card" data-star>
+        <div class="star-card-visual" data-pattern="3" aria-hidden="true"></div>
+        <div class="star-card-body">
+          <p class="star-name">JORDAN P.</p>
+          <p class="star-meta">Interactive Design &amp; Game Dev · 2nd Year</p>
+          <p class="star-interest">UI + Emerging Tech</p>
+          <p class="star-project">GLASS LOBBY</p>
+          <p class="star-desc">An AR interface concept for museum lobbies that reacts to how close visitors stand to the art.</p>
+          <a href="https://scadflux.com/" class="star-link" target="_blank" rel="noopener">VIEW PORTFOLIO →</a>
+        </div>
+      </article>
+
+      <article class="star-card" data-star>
+        <div class="star-card-visual" data-pattern="4" aria-hidden="true"></div>
+        <div class="star-card-body">
+          <p class="star-name">RILEY N.</p>
+          <p class="star-meta">Industrial Design · 3rd Year</p>
+          <p class="star-interest">Product + Physical UX</p>
+          <p class="star-project">LOW ORBIT</p>
+          <p class="star-desc">A dorm-room kit redesigned around how students actually move through small spaces, not how furniture is sold.</p>
+          <a href="https://scadflux.com/" class="star-link" target="_blank" rel="noopener">VIEW PORTFOLIO →</a>
+        </div>
+      </article>
+
+      <article class="star-card" data-star>
+        <div class="star-card-visual" data-pattern="5" aria-hidden="true"></div>
+        <div class="star-card-body">
+          <p class="star-name">SAM T.</p>
+          <p class="star-meta">UX Design · 1st Year</p>
+          <p class="star-interest">Service Design</p>
+          <p class="star-project">WAITING ROOM</p>
+          <p class="star-desc">A system redesign for student health services, mapped from the first phone call to the follow-up.</p>
+          <a href="https://scadflux.com/" class="star-link" target="_blank" rel="noopener">VIEW PORTFOLIO →</a>
+        </div>
+      </article>
+    </div>
+    <p class="students-note">Sample student work shown above — swap in current member portfolios before the fair.</p>
+  </section>
+
+  <!-- UX GOES EVERYWHERE -->
+  <section id="everywhere" class="section everywhere">
+    <div class="orbit-lines" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-a" cx="120" cy="860" rx="320" ry="220"/>
+        <ellipse class="ring ring-b" cx="950" cy="200" rx="260" ry="260"/>
+      </svg>
+    </div>
+    <div class="section-inner">
+      <p class="eyebrow" data-reveal>ORBIT 04 · REACH</p>
+      <h2 data-reveal>UX isn't limited to one industry.</h2>
+
+      <div class="industry-grid">
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="digital"></span>
+          <p class="industry-name">Digital</p>
+          <p class="industry-desc">Apps, websites, software</p>
+        </div>
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="physical"></span>
+          <p class="industry-name">Physical</p>
+          <p class="industry-desc">Products, devices, environments</p>
+        </div>
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="healthcare"></span>
+          <p class="industry-name">Healthcare</p>
+          <p class="industry-desc">Patient experiences, medical tools, systems</p>
+        </div>
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="emerging"></span>
+          <p class="industry-name">Emerging Tech</p>
+          <p class="industry-desc">AI, AR/VR, wearables, robotics</p>
+        </div>
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="transport"></span>
+          <p class="industry-name">Transportation</p>
+          <p class="industry-desc">Airports, navigation, mobility</p>
+        </div>
+        <div class="industry-card" data-reveal>
+          <span class="industry-icon" data-icon="services"></span>
+          <p class="industry-name">Services &amp; Systems</p>
+          <p class="industry-desc">Education, finance, retail, and more</p>
+        </div>
+      </div>
+
+      <p class="statement statement-small" data-reveal>The problems change. UX follows.</p>
+    </div>
+  </section>
+
+  <!-- MEET FLUX -->
+  <section id="flux" class="section meet-flux">
+    <div class="orbit-lines" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-c" cx="500" cy="500" rx="440" ry="440"/>
+      </svg>
+      <span class="floating-object obj-2" style="--r:18px"></span>
+    </div>
+    <div class="section-inner">
+      <p class="eyebrow" data-reveal>ORBIT 05 · HOME BASE</p>
+      <h2 data-reveal>Your community for UX.</h2>
+      <div class="two-col">
+        <p class="lede" data-reveal>FLUX is SCAD's UX club and community — a place to learn, connect, collaborate, get feedback, and work with real professionals outside the classroom.</p>
+        <p class="lede" data-reveal>Members have run Figma bootcamps, built a mentorship center, hosted Fluxathon, launched a podcast, organized a product design conference, and taken on real client work through the FLUX design agency.</p>
+      </div>
+      <p class="statement" data-reveal>Find your people.<br>Make something.<br>Explore what's next.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta" class="section final-cta">
+    <div class="orbit-lines orbit-lines-cta" aria-hidden="true">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <ellipse class="ring ring-a" cx="500" cy="500" rx="460" ry="230"/>
+        <ellipse class="ring ring-b" cx="500" cy="500" rx="260" ry="460"/>
+      </svg>
+    </div>
+    <div class="section-inner cta-inner">
+      <p class="eyebrow" data-reveal>ORBIT 06 · FINAL SIGNAL</p>
+      <h2 data-reveal>Keep exploring.</h2>
+      <p class="lede lede-narrow" data-reveal>Think UX might be your thing? Come find out.</p>
+
+      <div class="cta-actions" data-reveal>
+        <a href="https://www.instagram.com/scadflux/" class="btn btn-primary" target="_blank" rel="noopener">FOLLOW FLUX ON INSTAGRAM →</a>
+        <a href="https://scadflux.com/" class="btn btn-secondary" target="_blank" rel="noopener">EXPLORE FLUX →</a>
+      </div>
+
+      <div class="qr-card" data-reveal>
+        <img src="assets/qr-instagram.svg" alt="QR code linking to FLUX on Instagram" width="140" height="140" />
+        <p>SCAN TO FOLLOW<br><span>@scadflux</span></p>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <span>FLUX / SCAD</span>
+      <span>UX Design Club &amp; Community</span>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
