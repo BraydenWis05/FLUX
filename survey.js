@@ -203,28 +203,28 @@
       key: "investigator",
       name: "The Investigator",
       tag: "PEOPLE + EXPLORE",
-      desc: "You're driven by understanding people — their behaviors, needs, and the problems they can't quite name yet. You'd rather ask one more question than assume you already have the answer.",
+      desc: "Before you fix anything, you want to actually understand it. Give you an ambiguous problem and your first move is more questions, not a whiteboard.",
       paths: ["UX Research", "UX Strategy"]
     },
     advocate: {
       key: "advocate",
       name: "The Advocate",
       tag: "PEOPLE + BUILD",
-      desc: "You care about people, and you want to actually make something for them. You move fast from “this is broken” to “let me show you a version that isn't.”",
+      desc: "You care about the people on the other end of the thing you're making, and you'd rather show them a fix than talk about one. Once you know what's broken, you're already building.",
       paths: ["Interaction Design", "Service Design"]
     },
     analyst: {
       key: "analyst",
       name: "The Analyst",
       tag: "SYSTEMS + EXPLORE",
-      desc: "You're pulled toward how things actually work — systems, logic, technology, the reasons underneath the reasons. You'd rather map the whole problem before touching a single pixel.",
+      desc: "You want to know how things actually work underneath: the logic, the systems, the reason a process ended up this way. The pixels can wait until the problem makes sense.",
       paths: ["UX Strategy", "Product Design"]
     },
     architect: {
       key: "architect",
       name: "The Architect",
       tag: "SYSTEMS + BUILD",
-      desc: "You like turning complexity into structure — and then making that structure real. Give you a messy process or a messy interface and you'll come back with something that works.",
+      desc: "Messy processes and clunky interfaces bother you enough that you can't leave them alone. Hand you one and you'll come back with something that actually holds together.",
       paths: ["Product Design", "UI Design"]
     }
   };

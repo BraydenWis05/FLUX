@@ -22,8 +22,8 @@
   --bg: #f4f3f0;
   --card: #ffffff;
   --ink: #262421;
-  --ink-dim: rgba(0,0,0,0.65);
-  --ink-faint: rgba(0,0,0,0.5);
+  --ink-dim: rgba(0,0,0,0.72);
+  --ink-faint: rgba(0,0,0,0.62);
   --line: rgba(0,0,0,0.12);
   --accent: #cf6d75;
   --accent-strong: #b85961;
@@ -184,9 +184,11 @@ button{
 }
 .q-eyebrow{ margin-bottom: 12px; }
 .q-title{
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem);
-  line-height: 1.3;
-  max-width: 30ch;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.4;
+  max-width: 32ch;
 }
 .q-note{
   margin-top: 10px;
@@ -210,8 +212,9 @@ button{
 }
 
 .option-chip{
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.98rem;
   color: var(--ink);
   background: var(--card);
   border: 1px solid var(--line);
@@ -254,8 +257,9 @@ button{
 }
 .rank-label{
   flex: 1;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.98rem;
 }
 .rank-btns{
   display: flex;
@@ -295,8 +299,9 @@ button{
   .versus-or{ justify-self: center; }
 }
 .versus-chip{
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.98rem;
   text-align: center;
   color: var(--ink);
   background: var(--card);
