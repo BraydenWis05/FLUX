@@ -22,11 +22,14 @@
   --bg: #f4f3f0;
   --card: #ffffff;
   --ink: #262421;
-  --ink-dim: #5b584f;
-  --ink-faint: #948f80;
-  --line: #d9d5cb;
-  --accent: #c1442c;
-  --accent-dim: #f6e3dd;
+  --ink-dim: rgba(0,0,0,0.65);
+  --ink-faint: rgba(0,0,0,0.5);
+  --line: rgba(0,0,0,0.12);
+  --accent: #cf6d75;
+  --accent-strong: #b85961;
+  --accent-dim: rgba(207,109,117,0.16);
+  --accent-2: #3b59a9;
+  --accent-2-dim: rgba(59,89,169,0.14);
 
   --font-display: "Some Notes", "Segoe UI", cursive;
   --font-body: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -126,7 +129,7 @@ button{
   color: #fff;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-.btn-primary:hover{ background: #3c47c2; transform: translateY(-1px); }
+.btn-primary:hover{ background: var(--accent-strong); transform: translateY(-1px); }
 .btn-primary:disabled{ opacity: 0.4; cursor: not-allowed; transform: none; }
 
 .btn-text{
@@ -335,44 +338,55 @@ button{
 }
 .results-section .lede{ margin-bottom: 36px; }
 
-.meters{
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
-  margin-bottom: 36px;
+.matrix-wrap{
+  max-width: 380px;
+  margin: 0 0 36px;
 }
-.meter-track{
-  position: relative;
-  height: 4px;
-  background: var(--line);
-  border-radius: 2px;
+.matrix-plot{
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
-.meter-fill{
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 50%;
-  background: var(--line);
-  border-radius: 2px;
+.matrix-quad-label{
+  font-family: var(--font-display);
+  font-size: 13px;
+  fill: var(--ink-faint);
+  transition: fill 0.3s ease, font-weight 0.3s ease;
 }
-.meter-marker{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--bg);
-  box-shadow: 0 0 0 1px var(--accent);
-  transform: translate(-50%, -50%);
-  transition: left 0.4s ease;
+.matrix-quad-label.is-current{
+  fill: var(--accent-strong);
+  font-weight: 700;
 }
-.meter-labels{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-  font-size: 0.7rem;
-  color: var(--ink-faint);
+.matrix-quad-rect{
+  fill: transparent;
+  transition: fill 0.3s ease;
+}
+.matrix-quad-rect.is-current{
+  fill: var(--accent-dim);
+}
+.matrix-axis-line{
+  stroke: var(--line);
+  stroke-width: 1.5;
+}
+.matrix-axis-line.x-axis{ stroke: var(--accent-2); opacity: 0.45; }
+.matrix-axis-line.y-axis{ stroke: var(--accent); opacity: 0.45; }
+.matrix-axis-label{
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+.matrix-axis-label.x-label{ fill: var(--accent-2); }
+.matrix-axis-label.y-label{ fill: var(--accent-strong); }
+.matrix-guide{
+  stroke: var(--ink-faint);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+.matrix-mark{
+  fill: var(--accent);
+  stroke: var(--accent-2);
+  stroke-width: 2.5;
+  transition: cx 0.5s ease, cy 0.5s ease;
 }
 
 .paths-label{

@@ -200,24 +200,28 @@
 
   var ARCHETYPES = {
     investigator: {
+      key: "investigator",
       name: "The Investigator",
       tag: "PEOPLE + EXPLORE",
       desc: "You're driven by understanding people — their behaviors, needs, and the problems they can't quite name yet. You'd rather ask one more question than assume you already have the answer.",
       paths: ["UX Research", "UX Strategy"]
     },
     advocate: {
+      key: "advocate",
       name: "The Advocate",
       tag: "PEOPLE + BUILD",
       desc: "You care about people, and you want to actually make something for them. You move fast from “this is broken” to “let me show you a version that isn't.”",
       paths: ["Interaction Design", "Service Design"]
     },
     analyst: {
+      key: "analyst",
       name: "The Analyst",
       tag: "SYSTEMS + EXPLORE",
       desc: "You're pulled toward how things actually work — systems, logic, technology, the reasons underneath the reasons. You'd rather map the whole problem before touching a single pixel.",
       paths: ["UX Strategy", "Product Design"]
     },
     architect: {
+      key: "architect",
       name: "The Architect",
       tag: "SYSTEMS + BUILD",
       desc: "You like turning complexity into structure — and then making that structure real. Give you a messy process or a messy interface and you'll come back with something that works.",
@@ -577,14 +581,31 @@
     return ARCHETYPES.architect;
   }
 
-  function setMeter(meterEl, pct, leftLabel, rightLabel) {
-    var fill = meterEl.querySelector(".meter-fill");
-    var marker = meterEl.querySelector(".meter-marker");
-    var position = (pct + 100) / 2; // 0..100
-    fill.style.width = position + "%";
-    marker.style.left = position + "%";
-    meterEl.querySelector(".meter-left").textContent = leftLabel;
-    meterEl.querySelector(".meter-right").textContent = rightLabel;
+  var MATRIX_CENTER = 160;
+  var MATRIX_HALF = 120; // plot spans 40..280, so 120px = 100 score points
+
+  function setMatrix(scores, archetypeKey) {
+    var cx = MATRIX_CENTER + (scores.ps / 100) * MATRIX_HALF;
+    var cy = MATRIX_CENTER - (scores.eb / 100) * MATRIX_HALF;
+
+    document.getElementById("matrix-mark").setAttribute("cx", cx);
+    document.getElementById("matrix-mark").setAttribute("cy", cy);
+
+    var guideX = document.getElementById("matrix-guide-x");
+    guideX.setAttribute("x1", MATRIX_CENTER);
+    guideX.setAttribute("y1", cy);
+    guideX.setAttribute("x2", cx);
+    guideX.setAttribute("y2", cy);
+
+    var guideY = document.getElementById("matrix-guide-y");
+    guideY.setAttribute("x1", cx);
+    guideY.setAttribute("y1", MATRIX_CENTER);
+    guideY.setAttribute("x2", cx);
+    guideY.setAttribute("y2", cy);
+
+    document.querySelectorAll(".matrix-quad-rect, .matrix-quad-label").forEach(function (el) {
+      el.classList.toggle("is-current", el.getAttribute("data-quad") === archetypeKey);
+    });
   }
 
   function showResults() {
@@ -607,8 +628,7 @@
       pathsEl.appendChild(tag);
     });
 
-    setMeter(document.getElementById("meter-ps"), scores.ps, "PEOPLE", "SYSTEMS");
-    setMeter(document.getElementById("meter-eb"), scores.eb, "EXPLORE", "BUILD");
+    setMatrix(scores, archetype.key);
 
     resultsEl.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
   }
