@@ -42,7 +42,7 @@
         ? s.baseAlpha
         : s.baseAlpha + Math.sin(time * s.twinkleSpeed + s.phase) * 0.2;
       ctx.beginPath();
-      ctx.fillStyle = "rgba(243,239,228," + Math.max(alpha, 0.08) + ")";
+      ctx.fillStyle = "rgba(241,237,227," + Math.max(alpha, 0.08) + ")";
       var y = (s.y + drift) % window.innerHeight;
       if (y < 0) y += window.innerHeight;
       ctx.arc(s.x, y, s.r, 0, Math.PI * 2);
@@ -118,41 +118,20 @@
     });
   });
 
-  var orbitDots = document.querySelectorAll(".orbit-dot");
-  orbitDots.forEach(function (dot) {
-    dot.addEventListener("click", function () {
-      scrollToTarget(dot.getAttribute("data-target"));
+  document.querySelectorAll(".mainnav a").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var href = link.getAttribute("href");
+      if (href && href.charAt(0) === "#") {
+        e.preventDefault();
+        scrollToTarget(href);
+      }
     });
   });
-
-  var sections = Array.prototype.map.call(orbitDots, function (dot) {
-    return document.querySelector(dot.getAttribute("data-target"));
-  });
-
-  if ("IntersectionObserver" in window) {
-    var navObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          var index = sections.indexOf(entry.target);
-          if (index !== -1 && entry.isIntersecting) {
-            orbitDots.forEach(function (d) {
-              d.classList.remove("is-active");
-            });
-            orbitDots[index].classList.add("is-active");
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    sections.forEach(function (sec) {
-      if (sec) navObserver.observe(sec);
-    });
-  }
 
   /* ---------- touch-friendly reveal toggles ---------- */
   var isTouch = window.matchMedia("(hover: none)").matches;
   if (!isTouch) {
-    document.querySelectorAll(".planet, .star-card").forEach(function (card) {
+    document.querySelectorAll(".node, .star-card").forEach(function (card) {
       card.addEventListener("click", function (e) {
         var alreadyOpen = card.classList.contains("is-open");
         document.querySelectorAll(".is-open").forEach(function (c) {
